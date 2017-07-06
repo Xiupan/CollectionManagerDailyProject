@@ -1,29 +1,28 @@
+// List all movies on home page
+// User must be able to add a movie to the db.collection
+// User must be able to edit a movie
+// User must be able to delete a movie
+
+const express = require("express");
+const mustache = require("mustache-express");
+const bodyParser = require("body-parser");
+const app = express();
 const mongoose = require('mongoose');
+
+const homeRoutes = require("./routes/home");
+const newMovieRoutes = require("./routes/newmovie");
+
+app.engine('mustache', mustache());
+app.set("view engine", 'mustache');
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: false}));
+
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/movies');
 
-const movieSchema = new mongoose.Schema({
-  name: {type: String, required: true},
-  genre: {type: [String], require: true},
-  year: {type: Number, required: true},
-  director: {type: String, required: true}
-  mainActor: {type: String, required: true},
-  imdbLink: {type: String, required: true}
-})
+app.use(homeRoutes);
+app.use(newMovieRoutes);
 
-const Movie = mongoose.model('Movie', movieSchema);
-
-const movie = new Movie()
-movie.name = "The Terminator"
-movie.genre = ["Sci-fi", "Action"]
-movie.year = 1984
-movie.director = "James Cameron"
-movie.mainActor = "Arnold Schwarzenegger"
-movie.imdbLink = "http://www.imdb.com/title/tt0088247/"
-movie.save()
-.then(function(movie){
-  console.log(movie);
-})
-.catch(function(validationError){
-  console.log("Haha nope!")
+app.listen(3000, function(){
+  console.log("Movie Collection app running!")
 })

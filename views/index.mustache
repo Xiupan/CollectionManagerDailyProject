@@ -2,9 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Poop</title>
+    <title>Movie Collection</title>
   </head>
   <body>
-    <h1>Poop</h1>
+    <h1>Movies</h1>
+    <div class="movie-container">
+      {{#movies}}
+        <h2>{{name}}</h2>
+        <h3>Directed by {{director}}</h3>
+        <h3>Starring: {{mainActor}}</h3>
+        <h4>{{#genre}}{{.}} {{/genre}}</h4>
+        <h3>{{year}}</h3>
+        <a href="{{imdbLink}}">IMDB Link</a>
+      {{/movies}}
+    </div>
+    <a href="/newMovie">
+      <h3>Add a new Movie</h3>
+    </a>
   </body>
 </html>

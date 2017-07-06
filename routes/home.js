@@ -5,7 +5,7 @@ const Movie = require("../models/Movie")
 router.get('/', function(req, res){
   Movie.find()
   .sort("year")
-  .then( function(movies){
+  .then(function(movies){
     res.render("index", {
       movies: movies
     })
