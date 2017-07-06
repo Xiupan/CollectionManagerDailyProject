@@ -22,9 +22,8 @@ movie.mainActor = "Arnold Schwarzenegger"
 movie.imdbLink = "http://www.imdb.com/title/tt0088247/"
 movie.save()
 .then(function(movie){
-  console.log("Check mongo!");
   console.log(movie);
 })
 .catch(function(validationError){
-  console.log("Sorry sucker!")
+  console.log("Haha nope!")
 })

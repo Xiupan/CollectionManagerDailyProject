@@ -1,10 +1,10 @@
 {
-  "name": "mongooseactivity",
+  "name": "collectionmanagerdailyproject",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "nodemon -e js,mustache ./movieCollection.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,15 @@
     "express": "^4.15.3",
     "mongoose": "^4.10.8",
     "mustache-express": "^1.2.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiupan/CollectionManagerDailyProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xiupan/CollectionManagerDailyProject/issues"
+  },
+  "homepage": "https://github.com/Xiupan/CollectionManagerDailyProject#readme",
+  "description": ""
 }
