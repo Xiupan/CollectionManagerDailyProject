@@ -15,6 +15,9 @@
         <h3>{{year}}</h3>
         <a href="{{imdbLink}}">IMDB Link</a>
         <a href="/edit/{{_id}}">Edit Movie</a>
+        <form class="" action="/delete/{{_id}}" method="post">
+          <input type="submit" name="deleteButton" value="Delete Entry">
+        </form>
       {{/movies}}
     </div>
     <a href="/newMovie">
