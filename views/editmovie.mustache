@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Movie</title>
+  </head>
+  <body>
+    <h1>Edit the Movie Entry!</h1>
+    {{#movie}}
+    <div class="edit-movie-form-container">
+      <form class="edit-movie-form" action="/edit/{{_id}}" method="post">
+        <label for="movieName">Movie Name</label>
+        <input type="text" name="movieName" value="{{name}}">
+        <label for="movieYear">Year</label>
+        <input type="text" name="movieYear" value="{{year}}">
+        <label for="director">Director</label>
+        <input type="text" name="director" value="{{director}}">
+        <label for="mainActor">Main Actor / Actress</label>
+        <input type="text" name="mainActor" value="{{mainActor}}">
+        <label for="imdbLink">IMDB Link</label>
+        <input type="text" name="imdbLink" value="{{imdbLink}}">
+        <input type="submit" name="submitButton" value="Submit">
+      </form>
+    </div>
+    {{/movie}}
+  </body>
+</html>

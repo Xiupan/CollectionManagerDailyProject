@@ -14,8 +14,8 @@ router.post('/newmovie', function(request, response){
   movie.mainActor = request.body.mainActor;
   movie.imdbLink = request.body.imdbLink;
   movie.save()
-  .then(function(movie){
-    response.json(movie);
+  .then(function(){
+    response.redirect('/');
   })
 })
 
